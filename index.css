@@ -11,6 +11,10 @@ body{
     height: 100vh;
     width:100vw;
     background-color:#E0E0E0 ;
+    font-family: 'Gloock', serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Slabo 27px', serif;
     
 }
 .container{
@@ -18,6 +22,34 @@ body{
     width:250px;
     background-color:#28282B ;
     display: flex;
+    flex-direction: column;
     border-radius: 15px;
+    padding:15px;
+    gap:20px;
     
+}
+.screen{
+    width:100%;
+    background-color: #E0E0E0;
+    flex:1;
+    
+}
+.keys{
+    flex:3;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5px;
+    padding: 10px;
+}
+.keys .key{
+    background-color: #E0E0E0;
+    height:45px;
+    width: 45px;
+    flex:auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+
 }
