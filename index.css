@@ -10,7 +10,7 @@ body{
     align-items: center;
     height: 100vh;
     width:100vw;
-    background-color:#E0E0E0 ;
+    background-color:#E0DBD1;
     font-family: 'Gloock', serif;
     font-family: 'Indie Flower', cursive;
     font-family: 'Permanent Marker', cursive;
@@ -31,19 +31,21 @@ body{
 .screen{
     width:100%;
     background-color: #E0E0E0;
-    flex:1;
+    flex:2;
+    border-radius: 5px;
     
 }
 .keys{
-    flex:3;
+    flex:5;
     display: flex;
     flex-wrap: wrap;
     gap:5px;
     padding: 10px;
+   
 }
 .keys .key{
     background-color: #E0E0E0;
-    height:45px;
+    border-radius:5px ;
     width: 45px;
     flex:auto;
     text-align: center;
@@ -51,5 +53,5 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
-
+    
 }
