@@ -33,6 +33,7 @@ body{
     background-color: #E0E0E0;
     flex:2;
     border-radius: 5px;
+    overflow: hidden;
     
 }
 .keys{
