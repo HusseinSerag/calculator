@@ -41,6 +41,7 @@ keys.addEventListener('click' , e=>{
     else if(TARGET == 'DEL'){
         let content = screen.textContent
         content = content.slice(0,content.length-1)
+        
         screen.textContent = content
     }
     else if(TARGET == 'equal'){
@@ -49,8 +50,14 @@ keys.addEventListener('click' , e=>{
     }
     else if(TARGET == '+' || TARGET == '-' || TARGET == '*' || TARGET == '/' || TARGET == '^'){
         if(equals.textContent != ''){
-            operand1 = equals.textContent
+            if(screen.textContent.length == 4){
+
+            }
+            else{
+                operand1 = equals.textContent
             screen.textContent = "ans"
+            
+            }
             
         }
         screen.textContent += TARGET
@@ -62,9 +69,7 @@ keys.addEventListener('click' , e=>{
    
     else{
         screen.textContent += TARGET
-        if(equals.textContent != ''){
-            equalFunction()
-        }
+        
     }
     
 
@@ -72,7 +77,7 @@ keys.addEventListener('click' , e=>{
 })
 function equalFunction(){
     determineOps(screen.textContent)
-    number = (calc(operand1 , operand2 , operation))
+    number = calc(operand1 , operand2 , operation)
     if(Number.isInteger(number)){
         equals.textContent = number
     }else{
@@ -93,17 +98,74 @@ function determineOps(string){
         
     }
    }
+
+   
+
    
     let stringArr = string.split(re)
+    
+    if(operation.length == 2 && operation[1] == '-'){
+        stringArr.splice(1,1)
+        stringArr[1] = '-' + stringArr[1]
+        operation = operation[0]
+       
+
+       }
+       if(operation.length == 3 && operation[0] == '-' && operation[2] == '-'){
+        
+        stringArr.splice(2,1)
+        stringArr[2] = '-' + stringArr[2]
+        
+      
+       }
+       
+       
+       
     if(operand1 == '')
+    {
+        if(string[0] == '-'){
+           
+            stringArr.splice(0,1)
+            
+            console.log(operation)
+            
+            console.log(operation)
+            stringArr[0] = '-'+ stringArr[0]
+            
+        }
+        
+    }
+    
     operand1 = stringArr[0]
-
-
     operand2 = stringArr[1]
-    console.log(stringArr)
+
+    
+    if(operation.length == 1){
+        
+        operation = operation
+        
+    }
+    else if(operation.length == 2 && operation[0] == '-' && operation[1] != '-'){
+        operation = operation[1]
+    }
+    else if(operation.length == 2 && operation[1] == '-' && operation[0] != '-'){
+        operation = operation[0]
+    }
+    
+    else if(operation.length == 3){
+        operation = operation[1]
+    }
+    
+    if(stringArr[0] == 'ans'){
+        operand1 = equals.textContent
+        console.log(equals.textContent)
+        operand2 = stringArr[1]
+    }
+    
+    
     console.log(operand1)
     console.log(operand2)
-    
+    console.log(operation)
 
 }
 
