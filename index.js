@@ -10,8 +10,9 @@ function operate(operand1 , operand2 , operator){
 let operand1 = ''
 let operand2 = ''
 let operation;
+let operations = ['*' , '/' , '+' , '-' , '^']
 function determineOperands(operand , operator){
-    if(opertor == undefined){
+    if(operator == undefined){
         operand1 += operand
     }
     else{
@@ -22,7 +23,9 @@ keys.addEventListener('click' , e=>{
     e.stopPropagation()
     let TARGET  = e.target.id
     if(TARGET  == 'AC'){
-
+        operand1 = ''
+        operand2 = ''
+        operation = ''
         screen.textContent = ''
     }
     else if(TARGET == 'keys'){
@@ -34,9 +37,12 @@ keys.addEventListener('click' , e=>{
         screen.textContent = content
     }
     else if(TARGET == 'equal'){
-        operate(operand1 , operand2 , operator)
+        operate(operand1 , operand2 , operation)
     }
     else{
+        let value = operations.find(operation1 => operation1 == operation)
+        console.log(value)
+        determineOperands(TARGET , operation)
         screen.textContent += TARGET
     }
    
