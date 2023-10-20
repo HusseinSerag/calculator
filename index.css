@@ -62,6 +62,9 @@ body{
     
 }
 
+.keys .key.operation{
+    background-color: #2f4f4f;
+}
 .screen{
     display: flex;
     flex-direction: column;
