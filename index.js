@@ -127,9 +127,9 @@ function determineOps(string){
            
             stringArr.splice(0,1)
             
-            console.log(operation)
+            (operation)
             
-            console.log(operation)
+            (operation)
             stringArr[0] = '-'+ stringArr[0]
             
         }
@@ -158,15 +158,10 @@ function determineOps(string){
     
     if(stringArr[0] == 'ans'){
         operand1 = equals.textContent
-        console.log(equals.textContent)
+        (equals.textContent)
         operand2 = stringArr[1]
     }
     
-    
-    console.log(operand1)
-    console.log(operand2)
-    console.log(operation)
-
 }
 
 
