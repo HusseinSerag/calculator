@@ -54,5 +54,25 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
+    font-family: 'Gloock', serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Slabo 27px', serif;
+    border: 0;
     
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    padding:15px
+
+}
+.main{
+    flex:2;
+    font-size: 1.2em;
+}
+.equals {
+    flex:1;
+    font-size: 16px;
 }
