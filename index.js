@@ -1,7 +1,7 @@
 
 const keys = document.getElementById('keys')
 const screen = document.getElementById('main')
-const equals = document.getElementById('equals')
+const equalsDiv = document.getElementById('equals')
 
 function operate(operand1 , operand2 , operator){
     if(operator == "+"){
@@ -33,7 +33,7 @@ keys.addEventListener('click' , e=>{
         operand2 = ''
         operation = ''
         screen.textContent = ''
-        equals.textContent = ''
+        equalsDiv.textContent = ''
     }
     else if(TARGET == 'keys'){
 
@@ -49,12 +49,12 @@ keys.addEventListener('click' , e=>{
         
     }
     else if(TARGET == '+' || TARGET == '-' || TARGET == '*' || TARGET == '/' || TARGET == '^'){
-        if(equals.textContent != ''){
+        if(equalsDiv.textContent != ''){
             if(screen.textContent.length == 4){
 
             }
             else{
-                operand1 = equals.textContent
+                operand1 = equalsDiv.textContent
             screen.textContent = "ans"
             
             }
@@ -79,9 +79,9 @@ function equalFunction(){
     determineOps(screen.textContent)
     number = calc(operand1 , operand2 , operation)
     if(Number.isInteger(number)){
-        equals.textContent = number
+        equalsDiv.textContent = number
     }else{
-        equals.textContent = Number.parseFloat(number).toFixed(3)
+        equalsDiv.textContent = Number.parseFloat(number).toFixed(3)
     }
         
         screen.textContent = ''
@@ -157,8 +157,8 @@ function determineOps(string){
     }
     
     if(stringArr[0] == 'ans'){
-        operand1 = equals.textContent
-        (equals.textContent)
+        operand1 = equalsDiv.textContent
+        
         operand2 = stringArr[1]
     }
     
